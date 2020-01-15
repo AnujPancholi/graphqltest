@@ -1,10 +1,7 @@
 "use strict";
 
 
-const tempConfig = {
-	API_PORT: 3001
-}
-
+const config = require('./config.js');
 const express = require('express');
 const {
 	GraphQLSchema,
@@ -110,14 +107,7 @@ const RootQueryType = new GraphQLObjectType({
 	})
 })
 
-// const TeamRootQueryType = new GraphQLObjectType({
-// 	name: "teamRootQueryType",
-// 	description: "root query for team",
-// 	fields: () => ({
-// 		type: new GraphQLList(teamGQObject),
-// 		resolve: () => staticData.teams
-// 	})
-// })
+
 
 
 const myTestSchema = new GraphQLSchema({
@@ -134,7 +124,11 @@ app.use('/graphql',expressGraphQL({
 
 
 
-
-app.listen(tempConfig.API_PORT,() => {
-	console.log(`GraphQL server listening on ${tempConfig.API_PORT}`);
-})
+if(config.API_PORT){
+	app.listen(config.API_PORT,() => {
+		console.log(`GraphQL server listening on ${config.API_PORT}`);
+	})
+} else {
+	console.error("FATAL ERROR: CANNOT START SERVER, API_PORT NOT DEFINED IN ENV");
+	process.exit(1);
+}
