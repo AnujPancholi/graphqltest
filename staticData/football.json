@@ -1,0 +1,72 @@
+{
+	"players": [{
+		"id": "MU_010",
+		"name": "Wayne Rooney",
+		"jersey_number": 10,
+		"positions": ["CF","ST","CAM","RM","LM","CM","CB","RB","LB","GK"],
+		"team_id": "MUTD"
+	},{
+		"id": "MU_001",
+		"name": "David De Gea",
+		"jersey_number": 1,
+		"positions": ["GK"],
+		"team_id": "MUTD"
+	},{
+		"id": "MU_005",
+		"name": "Rio Ferdinand",
+		"jersey_number": 5,
+		"positions": ["CB"],
+		"team_id": "MUTD"
+	},{
+		"id": "MU_011",
+		"name": "Ryan Giggs",
+		"jersey_number": 11,
+		"positions": ["RM","LM","LW"],
+		"team_id": "MUTD"
+	},{
+		"id": "MU_016",
+		"name": "Roy Keane",
+		"jersey_number": 16,
+		"positions": ["CM","CDM"],
+		"team_id": "MUTD"
+	},{
+		"id": "AS_001",
+		"name": "David Seaman",
+		"jersey_number": 1,
+		"positions": ["GK"],
+		"team_id": "ASNL"
+	},{
+		"id": "AS_004",
+		"name": "Patrick Viera",
+		"jersey_number": 4,
+		"positions": ["CM"],
+		"team_id": "ASNL"
+	},{
+		"id": "AS_010",
+		"name": "Dennis Bergkamp",
+		"jersey_number": 10,
+		"positions": ["ST","RW","LW"],
+		"team_id": "ASNL"
+	},{
+		"id": "AS_014",
+		"name": "Thiery Henry",
+		"jersey_number": 14,
+		"positions": ["ST","CF"],
+		"team_id": "ASNL"
+	},{
+		"id": "AS_007",
+		"name": "Robert Pires",
+		"jersey_number": 7,
+		"positions": ["CF","CM"],
+		"team_id": "ASNL"
+	}],
+	"teams": [{
+		"id": "MUTD",
+		"name": "Manchester United",
+		"league_titles": 20
+	},{
+		"id": "ASNL",
+		"name": "Arsenal",
+		"league_titles": 13
+	}]
+}
