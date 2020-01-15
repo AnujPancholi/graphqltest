@@ -82,8 +82,8 @@ const RootQueryType = new GraphQLObjectType({
 				jersey_number: {
 					type: GraphQLInt
 				},
-				position: {
-					type: GraphQLString
+				positions: {
+					type: new GraphQLList(GraphQLString)
 				}
 			},
 			resolve: (parent,args) => {
@@ -97,7 +97,16 @@ const RootQueryType = new GraphQLObjectType({
 				if(args.jersey_number){
 					playersArr = playersArr.filter(player => player.jersey_number===args.jersey_number);
 				}
-				return playersArr
+				if(args.positions){
+					let playerPositionMap = playersArr.reduce((posMap,player) => {
+						posMap[player.id] = new Set(player.positions);
+						return posMap;
+					},{});
+					playersArr = playersArr.filter(player => {
+						return args.positions.find(pos => playerPositionMap[player.id].has(pos));
+					})
+				}
+				return playersArr;
 			}
 		},
 		teams: {
